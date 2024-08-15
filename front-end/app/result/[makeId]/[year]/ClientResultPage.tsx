@@ -1,6 +1,6 @@
 // app/result/[makeId]/[year]/ClientResultPage.tsx
 
-"use client";
+'use client';
 
 import { Suspense } from 'react';
 import { fetchVehicleModels } from '../../../services/vehicleService';
@@ -12,7 +12,13 @@ interface VehicleModel {
 }
 
 // Componente que maneja la carga de datos
-const VehicleModelsList = async ({ makeId, year }: { makeId: string; year: string }) => {
+const VehicleModelsList = async ({
+  makeId,
+  year,
+}: {
+  makeId: string;
+  year: string;
+}) => {
   const models = await fetchVehicleModels(makeId, year);
   return (
     <ul className="w-full max-w-4xl space-y-4">
@@ -25,7 +31,13 @@ const VehicleModelsList = async ({ makeId, year }: { makeId: string; year: strin
   );
 };
 
-const ClientResultPage = ({ makeId, year }: { makeId: string; year: string }) => {
+const ClientResultPage = ({
+  makeId,
+  year,
+}: {
+  makeId: string;
+  year: string;
+}) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8">
       <h1 className="text-4xl font-bold mb-6">
@@ -39,4 +51,3 @@ const ClientResultPage = ({ makeId, year }: { makeId: string; year: string }) =>
 };
 
 export default ClientResultPage;
-

@@ -1,4 +1,4 @@
-"use client"; 
+'use client';
 import { useRouter } from 'next/navigation';
 
 interface NextButtonProps {
@@ -7,7 +7,11 @@ interface NextButtonProps {
   selectedYear: string;
 }
 
-const NextButton = ({ isEnabled, selectedVehicle, selectedYear }: NextButtonProps) => {
+const NextButton = ({
+  isEnabled,
+  selectedVehicle,
+  selectedYear,
+}: NextButtonProps) => {
   const router = useRouter();
 
   const handleClick = () => {

@@ -5,7 +5,9 @@ const VEHICLE_MODELS_URL = process.env.NEXT_PUBLIC_VEHICLE_MODELS_URL;
 
 export const fetchVehicleTypes = async () => {
   if (!VEHICLE_TYPES_URL) {
-    throw new Error('Vehicle types URL is not defined in environment variables');
+    throw new Error(
+      'Vehicle types URL is not defined in environment variables',
+    );
   }
 
   try {
@@ -23,11 +25,16 @@ export const fetchVehicleTypes = async () => {
 
 export const fetchVehicleModels = async (makeId: string, year: string) => {
   if (!VEHICLE_MODELS_URL) {
-    throw new Error('Vehicle models URL is not defined in environment variables');
+    throw new Error(
+      'Vehicle models URL is not defined in environment variables',
+    );
   }
 
   try {
-    const url = VEHICLE_MODELS_URL.replace('{makeId}', makeId).replace('{year}', year);
+    const url = VEHICLE_MODELS_URL.replace('{makeId}', makeId).replace(
+      '{year}',
+      year,
+    );
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Network response was not ok');
